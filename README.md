@@ -2,6 +2,11 @@ This file contain instruction on how to use the palindrome module. The palindrom
 
 Note: This is the beta version 0.1.0 
 
-Instructions:
-Clone directory "palindrome" to local host.
-
+Instructions for usage:
+$ npm install --global ayo-palindrome
+$vim test.js
+let Phrase = require("ayo-palindrome");
+let napoleonsLament = new Phrase("Able was I, ere I saw Elba.");
+console.log(napoleonsLament.palindrome());
+$ node test.js
+true
