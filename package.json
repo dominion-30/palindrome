@@ -1,0 +1,25 @@
+{
+  "name": "ayo_palindrome",
+  "version": "0.1.0",
+  "description": "Palindrome detector",
+  "keywords": [
+    "palindrome",
+    "javascript",
+    "learn-enough"
+  ],
+  "homepage": "https://github.com/dominion-30/palindrome#readme",
+  "bugs": {
+    "url": "https://github.com/dominion-30/palindrome/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dominion-30/palindrome.git"
+  },
+  "license": "ISC",
+  "author": "Abiola Ayobamidele with Michael Hartl",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  }
+}
