@@ -2,6 +2,7 @@
 module.exports = Phrase;
 
 String.prototype.reverse = function(){
+    // return this;
    
     return Array.from(this).reverse().join("");
 }
@@ -17,7 +18,8 @@ function Phrase(content){
     this.content = content;
 
     this.processedContent = function processedContent(){
-        return this.content.toLowerCase();
+        // // return this.content;
+        return this.letters().toLowerCase();
 
     }
 
@@ -37,11 +39,25 @@ function Phrase(content){
 
    
 }
+this.letters = function letters(){
+    return (this.content.match(/[a-z]/gi) || []).join("");
+// const letterRegex = /[a-z]/i; 
+// let L = [];
+//     Array.from(this.content).forEach(function(character){
+//         // let character =  this.content.charAt(i) 
+//         if(character.match(letterRegex)){
+//             L.push(character);
+//         }
+       
+//     })
+//     return L.join("");
+}
    
 }
 
-// let napolenonsLament = new Phrase("Able was I ere I saw Elba");
-// console.log(napolenonsLament.palindrome());
+
+let say = new Phrase("Madam, I'm Adam.");
+console.log(say.letters());
 
 
 String.prototype.blank = function(){
