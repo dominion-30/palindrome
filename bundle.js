@@ -1,3 +1,18 @@
+(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+let Phrase = require("ayo_palindrome");
+
+let string = prompt("Please enter a string for palindrome testing:", "Enter string");
+// alert(new Phrase("Madam, I'm Adam.").palindrome());
+
+let user_string = new Phrase(string);
+
+if(user_string.palindrome()){
+    alert(`"${user_string.content}" is a palindrome`);
+}
+else{
+    alert(`"${user_string.content}" is not a palindrome`);
+}
+},{"ayo_palindrome":2}],2:[function(require,module,exports){
 
 module.exports = Phrase;
 
@@ -40,11 +55,8 @@ function Phrase(content){
    
 }
 this.letters = function letters(){
-     const letterRegex = /[a-z]/gi; 
-    // return (this.content.match(/[a-z]/gi).join(""));
-    //  return (this.content.match(/[a-z]/gi) || []).join("");
-    return (this.content.match(letterRegex) || []).join("");
-
+    return (this.content.match(/[a-z]/gi) || []).join("");
+// const letterRegex = /[a-z]/i; 
 // let L = [];
 //     Array.from(this.content).forEach(function(character){
 //         // let character =  this.content.charAt(i) 
@@ -157,3 +169,5 @@ console.log(a.lastElement());
 // let wordChecker = new Phrase("Complete");
 // console.log(wordChecker.processor("COMPLETE"))
 // console.log(newPhrase.palindrome());
+
+},{}]},{},[1]);
