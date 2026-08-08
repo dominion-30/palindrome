@@ -34,33 +34,38 @@ function Phrase(content){
     // let convertedString = this.content.toLowerCase();
     // return convertedString;
     // return convertedString === reverse(convertedString);
-    return this.processedContent() === this.processedContent().reverse();
-
+    if(this.letters()){
+         return this.processedContent() === this.processedContent().reverse();
+    }
+    else{
+        return false;
+    }
 
    
-}
-this.letters = function letters(){
+    }
+    this.letters = function letters(){
      const letterRegex = /[a-z]/gi; 
     // return (this.content.match(/[a-z]/gi).join(""));
     //  return (this.content.match(/[a-z]/gi) || []).join("");
     return (this.content.match(letterRegex) || []).join("");
 
-// let L = [];
-//     Array.from(this.content).forEach(function(character){
-//         // let character =  this.content.charAt(i) 
-//         if(character.match(letterRegex)){
-//             L.push(character);
-//         }
+    // let L = [];
+        //     Array.from(this.content).forEach(function(character){
+    //         // let character =  this.content.charAt(i) 
+    //         if(character.match(letterRegex)){
+    //             L.push(character);
+    //         }
        
-//     })
-//     return L.join("");
-}
+    //     })
+    //     return L.join("");
+    }
    
 }
 
 
-let say = new Phrase("Madam, I'm Adam.");
+let say = new Phrase("");
 console.log(say.letters());
+
 
 
 String.prototype.blank = function(){
@@ -83,6 +88,10 @@ Array.prototype.lastElement = function(){
 
 a = [1,2,"g", 5];
 console.log(a.lastElement());
+
+
+let y = new Phrase("car");
+console.log(y.palindrome());
 // palindrome("To be or not to be");
 // palindrome("level");
 

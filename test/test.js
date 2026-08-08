@@ -23,6 +23,13 @@ describe ("Phrase", function(){
             assert(punctuatedPalindrome.palindrome());
         })
 
+        it("should return false when string is empty", function(){
+            let emptyPalindrome = new Phrase("");
+            assert(!emptyPalindrome.palindrome());
+
+        })
+       
+
 
         
     })
@@ -36,6 +43,8 @@ describe ("Phrase", function(){
             let noLetters = new Phrase("1234.56");
             assert.strictEqual(noLetters.letters(), "");
         });
+
+         
 
     })
   

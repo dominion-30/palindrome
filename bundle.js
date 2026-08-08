@@ -1,17 +1,46 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-let Phrase = require("ayo_palindrome");
+ let Phrase = require("ayo_palindrome");
+function palindromeTester(event){
+    event.preventDefault();
 
-let string = prompt("Please enter a string for palindrome testing:", "Enter string");
-// alert(new Phrase("Madam, I'm Adam.").palindrome());
+   
 
-let user_string = new Phrase(string);
+    // let string = prompt("Please enter a string for palindrome testing:", "Enter string");
+    // alert(new Phrase("Madam, I'm Adam.").palindrome());
 
-if(user_string.palindrome()){
-    alert(`"${user_string.content}" is a palindrome`);
+    let user_string = new Phrase(event.target.user_string.value);
+    let palindromeResult = document.querySelector("#palindromeResult");
+
+    if(user_string.palindrome()){
+        
+        palindromeResult.innerHTML = `<strong>"${user_string.content}"</strong> is a palindrome!`;
+        
+            // alert(`"${user_string.content}" is a palindrome`);
+        }
+    else{
+        palindromeResult.innerHTML = `<strong>"${user_string.content}"</strong> is not a palindrome.`;
+    // alert(`"${user_string.content}" is not a palindrome`);
+     }
+
+
 }
-else{
-    alert(`"${user_string.content}" is not a palindrome`);
-}
+document.addEventListener("DOMContentLoaded", function(){
+
+    let tester = document.querySelector("#palindromeTester");
+   
+
+//     button.addEventListener("click", function(){
+//     palindromeTester();
+// }
+
+// );
+tester.addEventListener("submit", function(event){
+    palindromeTester(event);
+})
+})
+
+
+
 },{"ayo_palindrome":2}],2:[function(require,module,exports){
 
 module.exports = Phrase;
